@@ -1,0 +1,201 @@
+Python
+
+Pensar en que quiero lograr.
+Podemos ir por Frontend, IoT *, IA * (se encarga de enseñar a la computadora sin necesidad de que lo hagamos nosotros), Backend *(donde creamos la lógica para que funcione una aplicación y corre en un servidor), DevOps (personas que controlan la infraestructura para que funcione una aplicación), Data Science * (toma la información de un ambiente y genera información relevante para sacar conclusiones. Ej: para mejorar la eficacia de un negocio o empresa), Videojuegos, Desarrollo Móvil.
+
+Algoritmo: una serie de pasos para resolver un problema.
+Es finito. Tiene que tener un principio y una serie de pasos que nos lleven a ese fin claro.
+No ambiguo. 
+
+Comandos para la consola:
+..\  -> carpeta hacia atras
+cd .. -> carpeta padre
+ls -> lista los elementos de la carpeta en la que esté ubicado.
+mkdir nombre_de_carpeta -> make directory, osea crear directorio, te crea una carpeta
+touch nombre_del_archivo.txt -> para crear un archivo con el formato que quiera.
+py -> para iniciar la consola interactiva.
+Ctrl + l -> limpia la pantalla
+exit() -> salir de Python.
+
+Operaciones matematicas
+  Divisiones con decimales: 21/5= 4.2
+  Divisiones enteras: 21//5= 4
+  Potenciación: 2**5= 32
+  Raiz cuadrada: importanto la libreria math y ejecutando así "math.sqrt(numero)"
+
+Variables
+numero1 = 1000
+numero2 = 10000
+print(numero1 * numero2)
+
+Convertir datos en un tipo diferente
+  variable1 = int(numero1)
+
+Operadores lógicos y de comparación (and / or / not)
+
+Python siempre devuelve verdadero cuando todas las variables sean verdaderas. Ej:
+  es_estudiante = True
+  trabaja = False
+
+  es_estudiante and trabaja
+  False  <-- porque solo devuelve True cuando todas las variasbles son veraderas
+
+ej 2:
+  es_estudiante or trabaja
+  True <-- porque el operador OR devuelve falso cuando todas las variables son falsas.
+
+ej3:
+  not es_estudiante
+  False <-- porque NOT invierte el valor de una variable.
+
+ej4:
+  numero1 = 10
+  numero2 = 10000
+  numero3 = 7000
+  numero1 == numero2
+  True <-- porque el signo == confirma que los valores son iguales.
+
+  si dijera
+  numero1 == numero3
+  False <-- porque numero7 es 7000
+
+  si dijera numero1 != numero3
+  True <-- porque realmente son valores distintos
+
+ej5:
+  numero1 > numero3
+  True <-- porque numero1 es mayor
+
+***
+
+Funciones: se utilizan para evitar repetir código que realiza una serie de pasos.
+ej:
+  print(Mensaje especial: ¡Estoy aprendiendo funciones!)
+  print(Mensaje especial: ¡Estoy aprendiendo funciones!)
+  print(Mensaje especial: ¡Estoy aprendiendo funciones!)
+
+  puedo reemplazarlo por
+
+  def imprimir_mensaje():
+    print("Mensaje especial: ¡Estoy aprendiendo funciones!")
+    print("Mensaje especial: ¡Estoy aprendiendo funciones!")
+    print("Mensaje especial: ¡Estoy aprendiendo funciones!")
+
+  imprimir_mensaje()
+  imprimir_mensaje()
+  imprimir_mensaje()
+  
+***
+
+#Parámetros
+def conversacion(mensaje):
+  print("Hola")
+  print("¿Cómo estás?")
+  print(mensaje)
+  print("Adiós")
+
+opcion = int(input("Elige una opción (1, 2, 3): "))
+if opcion == 1:
+  conversacion("Elegiste la opción 1")
+elif opcion == 2:
+  conversacion("Elegiste la opción 2")
+elif opcion == 3:
+  conversacion("Elegiste la opcion 3")
+else:
+  print("Escribe una opción correcta por favor.")
+
+***
+
+Transformar texto a mayusculas
+  variable_de_nombre.upper()
+
+Letra capital
+  variable_de_nombre.capitalize()
+
+Eliminar espacios basura al principio o final de mi cadena de caracteres
+  nombre = variable_de_nombre.strip()
+
+Pasar texto a minúsculas
+  nombre = variable_de_nombre.lower()
+
+Reemplazar valores de una variable
+  nombre = variable_de_nombre.replace("o", "a")
+
+Para contar cuantas letras tiene nombre
+  len(nombre)
+
+Imrpimir los valores en forma de lista
+  list(nombre)
+
++++
+
+Indices[] : nos permiten acceder a cada uno de los caracteres de mi componente
+Comienzan desde el cero
+ej:
+  para obtener la primer letra de nombre
+  nombre[0]
+
+***
+
+Slices(rebanadas): nos permiten acceder a una parte del elemento
+ej:
+  nombre[2:] imprime desde el dos hasta el final
+  nombre[:4] imprime desde el comienzo hasta el 4
+  nombre[1:5:2] imprime los caracteres de dos en dos hasta llegar al 5
+  nombre[::] imprime el nombre completo
+  nombre[1::3] imprime desde uno hasta el final de tres en tres
+  nombre[::-1] imprime desde el final de uno en uno hacia el principio. Entonces lo imprime inversamente.
+
+***
+
+Bucles o Ciclos: nos sirven para repetir una serie de pasos sin escribir tanto código.
+Los fundamentales son WHILE (mientras) y FOR
+
+WHILE
+contador = 1
+print(contador)
+while contador < 1000:
+  #contador = contador + 1 
+  contador += 1 #podemos reemplazar la linea superior por esta que opera de la misma forma. Agrega uno al valor de contador
+  print(contador)
+
+
+FOR
+for contador in range(1, 1001):
+  print(contador) #le estamos diciendo que imprima los valores de la variable contador que van del 1 al 1001
+
+#Otro ejemplo sería imprimiendo la tabla del once
+for i in range(10): #declaramos la variable i que va de 1 en 1 hasta el 9, sin llegar al limite, la multiplicamos por 11 y se imprime.
+  print(11 * i)
+
+***
+
+Break y continue
+Son palabras claves para detener un algoritmo y para continuarlo
+
+  #Acá estamos diciendole que imprima valores hasta el 1000 siempre y cuando el resultado de contador dividido por dos sea cero. Si es así, que continue imprimiendo
+  def run():
+    for contador in range(1000):
+      if contador % 2 != 0:
+        continue
+      print(contador)
+
+  if __name__ == "__main__":
+    run()
+
+  #Acá imprimimos los valores hasta el 1000. Pero detenerse si el valor de i llegara a ser 5678.
+  for i in range (10000):
+    print(i)
+    if i == 5678:
+      break
+
+  #Imprime los valores de un texto siempre y cuando no aparezca la letra O
+  texto = input("Ingresa una texto: ")
+  for letra in texto:
+    if letra == "o":
+      break
+    print(letra)
+
+***
+
+Números primos
