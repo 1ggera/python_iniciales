@@ -1,4 +1,4 @@
 # python_iniciales
-Prácticas básicas en Pytthon
+Estos son mis primeros pasos en Python
 *
 *
